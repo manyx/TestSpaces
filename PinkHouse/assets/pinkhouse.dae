@@ -33,7 +33,7 @@
   </library_cameras>
   <library_images>
     <image id="TextureAtlas" name="TextureAtlas">
-      <init_from>assets/TextureAtlas.png</init_from>
+      <init_from>TextureAtlas.png</init_from>
     </image>
   </library_images>
   <library_effects>
