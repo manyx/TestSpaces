@@ -10,17 +10,6 @@
         display:none;
       }
     </style>
-    <script>
-      AFRAME.registerComponent('collapse-model', {
-        init: function () {
-          this.el.addEventListener('model-loaded', function () {
-            this.el.setObject3D('mesh', this.el.object3DMap.mesh.children[0]);
-            // setObject3D emits this event in a-frame 0.4.0
-            this.el.emit('object3dset', {type: 'mesh'});
-          }.bind(this));
-        }
-      });
-    </script>
   </head>
   <body>
     <a-scene altspace="fullspace: true" sync-system="author: altspacevr; app: test-scene-sync">
