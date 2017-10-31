@@ -16,11 +16,13 @@
       <a-assets>
         <a-asset-item id="pinkhouse-obj" src="assets/pinkhouse.obj"></a-asset-item>
 	    <a-asset-item id="pinkhouse-mtl" src="assets/pinkhouse.mtl"></a-asset-item>
+	    <img id='skytest' src='assets/skytest.jpg'></img>
       </a-assets>
       <!-- This is a comment section to say what your model is-->
       <!--<a-entity position="0 -2 0" rotation="0 0 0" scale="20 20 20" collada-model="#pinkhouse" altspace-cursor-collider="enabled: false" n-mesh-collider="type: environment; convex: false">-->
 
       <a-obj-model src="#pinkhouse-obj" mtl="#pinkhouse-mtl" position="0 0 0" scale="40 40 40" n-mesh-collider="type: environment; convex: false"></a-obj-model>
+      <a-sky src='#skytest' radius='500'></a-sky>
       </a-entity>
   </body>
 </html>
