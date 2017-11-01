@@ -4,7 +4,21 @@
     <title>Test -AltspaceVR</title>
     <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
     <script src="https://sdk.altvr.com/libs/altspace.js/2.6.1/altspace.min.js"></script>
-    <script>THREE.PositionalAudio = THREE.Audio</script>      
+    <script>THREE.PositionalAudio = THREE.Audio</script>   
+    <script src="../../dist/aframe-altspace-component.js"></script>
+	<script>
+		// n-skeleton-parent only works with root meshes at the moment. Since most model loaders use a root
+		// container object, we need to collapse the model so that n-skeleton-parent can access the mesh directly.
+		AFRAME.registerComponent('collapse-model', {
+			init: function () {
+				this.el.addEventListener('model-loaded', function () {
+					this.el.setObject3D('mesh', this.el.object3DMap.mesh.children[0]);
+					// setObject3D emits this event in a-frame 0.4.0
+					this.el.emit('object3dset', {type: 'mesh'});
+				}.bind(this));
+			}
+		});
+	</script>   
     <style type="text/css">
       .a-enter-vr{
         display:none;
@@ -14,17 +28,12 @@
   <body>
     <a-scene altspace="fullspace: true" sync-system="author: altspacevr; app: test-scene-sync">
       <a-assets>
+      	<a-asset-item id="voxel-axe-obj" src="assets/vaxe.obj"></a-asset-item>
+		<a-asset-item id="voxel-axe-mtl" src="assets/vaxe.mtl"></a-asset-item>
 
-      			<a-asset-item id="voxel-axe-obj" src="assets/vaxe.obj"></a-asset-item>
-				<a-asset-item id="voxel-axe-mtl" src="assets/vaxe.mtl"></a-asset-item>
-      			<a-mixin id="voxel-axe"
-					obj-model="obj: #voxel-axe-obj; mtl: #voxel-axe-mtl" collapse-model
-					scale="1 1 1"></a-mixin>
-				<a-mixin id="parent-to-left-hand"
-					position="0 0 0"
-					rotation="0 0 0"
-					n-skeleton-parent="part: hand; side: left;"
-					sync sync-n-skeleton-parent></a-mixin>
+      	<a-mixin id="voxel-axe" obj-model="obj: #voxel-axe-obj; mtl: #voxel-axe-mtl" collapse-model scale="1 1 1"></a-mixin>
+		<a-mixin id="parent-to-left-hand" position="0 2 0" rotation="0 0 0" n-skeleton-parent="part: hand; side: left;" sync sync-n-skeleton-parent></a-mixin>
+
         <a-asset-item id="pinkhouse-obj" src="assets/pinkhouse.obj"></a-asset-item>
 	    <a-asset-item id="pinkhouse-mtl" src="assets/pinkhouse.mtl"></a-asset-item>
 	    <img id='skytest' src='assets/skytest.jpg'></img>
