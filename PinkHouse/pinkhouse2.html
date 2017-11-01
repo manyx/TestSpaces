@@ -14,6 +14,17 @@
   <body>
     <a-scene altspace="fullspace: true" sync-system="author: altspacevr; app: test-scene-sync">
       <a-assets>
+
+      			<a-asset-item id="voxel-axe-obj" src="assets/vaxe.obj"></a-asset-item>
+				<a-asset-item id="voxel-axe-mtl" src="assets/vaxe.mtl"></a-asset-item>
+      			<a-mixin id="voxel-axe"
+					obj-model="obj: #voxel-axe-obj; mtl: #voxel-axe-mtl" collapse-model
+					scale="1 1 1"></a-mixin>
+				<a-mixin id="parent-to-left-hand"
+					position="0 0 0"
+					rotation="0 0 0"
+					n-skeleton-parent="part: hand; side: left;"
+					sync sync-n-skeleton-parent></a-mixin>
         <a-asset-item id="pinkhouse-obj" src="assets/pinkhouse.obj"></a-asset-item>
 	    <a-asset-item id="pinkhouse-mtl" src="assets/pinkhouse.mtl"></a-asset-item>
 	    <img id='skytest' src='assets/skytest.jpg'></img>
@@ -21,9 +32,10 @@
       <!-- This is a comment section to say what your model is-->
       <!--<a-entity position="0 -2 0" rotation="0 0 0" scale="20 20 20" collada-model="#pinkhouse" altspace-cursor-collider="enabled: false" n-mesh-collider="type: environment; convex: false">-->
 
+      <a-entity id="initial-synced-box" one-per-user="mixin: voxel-axe parent-to-left-hand"></a-entity>
       <a-obj-model src="#pinkhouse-obj" mtl="#pinkhouse-mtl" position="0 0 0" scale="40 40 40" n-mesh-collider="type: environment; convex: false"></a-obj-model>
       <a-box position="0 .5 7" rotation="0 0 0" color="#4CC3D9"></a-box>
       <a-sky src='#skytest' radius='500'></a-sky>
-      </a-entity>
-  </body>
+    </a-scene>  
+   </body>
 </html>
