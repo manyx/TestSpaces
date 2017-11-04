@@ -1,0 +1,30 @@
+<html>
+<body>
+<script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/AltspaceVR/AltspaceSDK/v2.6.1/dist/altspace.min.js"></script>
+
+<!-- set up the scene -->
+<a-scene altspace='fullspace:true'>
+
+    <!-- preload all our textures -->
+    <a-assets>
+        <img id='skytest' src='images/sky.jpg'/>
+    </a-assets>
+
+    <!--main sign -->
+    <a-plane src="images/yafmain.png" height="5" width="10.2" rotation="0 180 0" radius="2" side="double" position="1.89 7.2 31.6" transparent="true" material geometry scale visible>
+    </a-plane>
+
+    <!--Placement for blank above space. -->
+    <a-plane src="images/yafneon1.png" height="4.8" width="2.6" rotation="0 295 0" radius="2" side="double" position="11.02 7.6 11.31" material geometry scale visible>
+    </a-plane>
+
+    <a-plane src="images/yafneon2.png" height="4.8" width="2.6" rotation="0 295 0" radius="2" side="double" position="11.02 7.6 11.31" material geometry scale visible>
+    </a-plane>
+
+    <a-sky src='#skytest' radius='500'></a-sky>
+
+</a-scene>
+
+</body>
+</html>
