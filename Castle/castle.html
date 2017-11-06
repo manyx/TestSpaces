@@ -13,19 +13,21 @@
         <a-asset-item id="monu10-mtl" src="theD.mtl"></a-asset-item>
         <img id='neonmain' src='images/yafneon1.png'/>
         <img id='neonlight' src='images/yafneon2.png'/>
+        <img id='neonlight' src='images/yafneon3.png'/>
         <img id='mainbanner' src='images/yafmain.png' />
         <!--<img id='skytest' src='assets/skytest.jpg'></img>-->
       </a-assets>
         <a-light type="point" position="0 50 30" intensity="500">
             <a-sphere radius='.2' color='yellow'></a-sphere>
         </a-light>
-        <a-entity obj-model='obj: #monu10-obj; mtl: #monu10-mtl' position="0 0 0" scale=".3 .3 .3" n-mesh-collider="type: environment; convex: false" bake-vertex-light bake-vertex-light></a-entity>
+        <a-entity obj-model='obj: #monu10-obj; mtl: #monu10-mtl' position="0 1 0" rotation="0 0 40" scale=".02 .02 .02" bake-vertex-light bake-vertex-light></a-entity>
         <a-image src="#neonmain" height="4" width="10" rotation="0 270 0" radius="2" side="double" position="0 7 -8" transparent="true" material geometry scale visible>
         </a-image>
         <a-image src="#neonlight" height="4" width="10" rotation="0 270 0" radius="2" side="double" position="-.1 7 -8" transparent="true" visible="true">
         </a-image>
         
         <!--<a-sky src='#skytest' radius='500'></a-sky>-->
+
     </a-scene>
     <script>
   		var i = 0;
