@@ -7,16 +7,17 @@
     <script src="https://bengarfield.github.io/AltVR/GPoly/bake-vertex-light.js"></script>
   </head>
   <body>
-    <a-scene altspace="fullspace: true" sync-system="author: altspacevr; app: test-scene-sync">
+    <a-scene altspace="fullspace: true">
       <a-assets>
         <a-asset-item id="monu10-obj" src="monu10.obj"></a-asset-item>
-	    <a-asset-item id="monu10-mtl" src="monu10.mtl"></a-asset-item>
-	    <!--<img id='skytest' src='assets/skytest.jpg'></img>-->
+        <a-asset-item id="monu10-mtl" src="monu10.mtl"></a-asset-item>
+        <!--<img id='skytest' src='assets/skytest.jpg'></img>-->
       </a-assets>
-        <a-obj-model src="#monu10-obj" mtl="#monu10-mtl" position="0 0 0" scale=".3 .3 .3" n-mesh-collider="type: environment; convex: false" bake-vertex-light></a-obj-model>
-        <a-light type="point" position="10 20 0" intensity="20">
-        	<a-sphere radius='.2' color='yellow'></a-sphere>
-        </a-light> 
+        <a-light type="point" position="0 50 30" intensity="500">
+            <a-sphere radius='.2' color='yellow'></a-sphere>
+        </a-light>
+        <a-entity obj-model='obj: #monu10-obj; mtl: #monu10-mtl' position="0 0 0" scale=".3 .3 .3" bake-vertex-light></a-entity>
+        
         <!--<a-sky src='#skytest' radius='500'></a-sky>-->
     </a-scene>  
    </body>
