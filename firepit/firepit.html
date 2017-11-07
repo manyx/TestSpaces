@@ -10,13 +10,13 @@
     <a-scene altspace="fullspace: true">
       <a-assets>
         <a-asset-item id="firepit-obj" src="assets/model.obj"></a-asset-item>
-        <a-asset-item id="firepit-mtl" src="materials.mtl"></a-asset-item>
+        <a-asset-item id="firepit-mtl" src="assets/materials.mtl"></a-asset-item>
         <img id='sky' src='assets/sky.jpg'></img>-->
       </a-assets>
-        <a-light type="point" position="0 50 30" intensity="500">
+        <a-light type="point" position="0 50 30" intensity="1000">
             <a-sphere radius='.2' color='yellow'></a-sphere>
         </a-light>
-        <a-entity obj-model='obj: #firepit-obj; mtl: #firepit-mtl' position="0 0 0" rotation="0 0 0" scale=".02 .02 .02" bake-vertex-light bake-vertex-light n-mesh-collider="type: environment; convex: false"></a-entity>
+        <a-entity obj-model='obj: #firepit-obj; mtl: #firepit-mtl' position="0 0 0" rotation="0 0 0" scale="1 1 1" bake-vertex-light bake-vertex-light n-mesh-collider="type: environment; convex: false"></a-entity>
         <a-sky src='#skytest' radius='500'></a-sky>
     </a-scene>
    </body>
