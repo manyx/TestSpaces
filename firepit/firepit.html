@@ -13,11 +13,11 @@
         <a-asset-item id="firepit-mtl" src="assets/materials.mtl"></a-asset-item>
         <img id='sky' src='assets/sky.jpg'></img>-->
       </a-assets>
-        <a-light type="point" position="0 50 30" intensity="1000">
+        <a-light type="point" position="45 200 0" intensity="2000">
             <a-sphere radius='.2' color='yellow'></a-sphere>
         </a-light>
-        <a-entity obj-model='obj: #firepit-obj; mtl: #firepit-mtl' position="0 0 0" rotation="0 0 0" scale="1 1 1" bake-vertex-light bake-vertex-light n-mesh-collider="type: environment; convex: false"></a-entity>
-        <a-sky src='#skytest' radius='500'></a-sky>
+        <a-entity obj-model='obj: #firepit-obj; mtl: #firepit-mtl' position="0 50 0" rotation="0 0 0" scale="20 20 20" bake-vertex-light bake-vertex-light n-mesh-collider="type: environment; convex: false"></a-entity>
+        <a-sky src='#sky' radius='500'></a-sky>
     </a-scene>
    </body>
 </html>
