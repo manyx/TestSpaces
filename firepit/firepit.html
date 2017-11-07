@@ -18,8 +18,8 @@
         </a-light>
         <a-entity obj-model='obj: #firepit-obj; mtl: #firepit-mtl' position="0 50 0" rotation="0 0 0" scale="20 20 20" bake-vertex-light bake-vertex-light n-mesh-collider="type: environment; convex: false"></a-entity>
 
-        <a-entity id="spawn" light="type: point; intensity: 2.0" position="45 24 10" material="color: red" geometry="primitive: box" id="spawn"></a-entity>
-        <a-entity n-portal="targetEntity: spawn"></a-entity>
+        <a-entity id="spawn" light="type: point; intensity: 2.0" position="45 24 10" rotation="0 180 0" material="color: blue" geometry="primitive: box" id="spawn"></a-entity>
+        <a-entity n-portal="targetEntity: #spawn"></a-entity>
 
 
         <a-sky src='#sky' radius='500'></a-sky>
