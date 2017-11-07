@@ -21,8 +21,10 @@
         <a-entity id="spawn" light="type: point; intensity: 2.0" position="45 24 10" rotation="0 270 0" material="color: yellow" geometry="primitive: box" id="spawn"></a-entity>
         <a-entity n-portal="targetEntity: #spawn"></a-entity>
 
+        <a-entity n-sound="src: assets/bg.wav; autoplay: true; loop: on; rolloff: logarithmic; minDistance: 2; maxDistance: 5; volume: 1">
 
         <a-sky src='#sky' radius='500'></a-sky>
+
     </a-scene>
    </body>
 </html>
