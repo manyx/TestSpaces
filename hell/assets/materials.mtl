@@ -7,6 +7,3 @@ newmtl mat17
 newmtl mat16
   Kd 0.47 0.56 0.61
 
-newmtl mat13
-  Kd 1.00 0.60 0.00
-
