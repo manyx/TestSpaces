@@ -13,14 +13,14 @@
         <a-asset-item id="mtl" src="assets/materials.mtl"></a-asset-item>
         <img id='sky' src='assets/sky.jpg'></img>-->
       </a-assets>
-      
-        <a-light type="point" position="100 200 100" intensity="5000">
+
+        <a-light type="point" position="10 20 10" intensity="500">
             <a-sphere radius='.2' color='yellow'></a-sphere>
         </a-light>
 
-        <a-entity obj-model='obj: #obj; mtl: #mtl' position="-20 0 0" rotation="0 300 0" scale="10 10 10" bake-vertex-light bake-vertex-light n-mesh-collider="type: environment; convex: false"></a-entity>
+        <a-entity obj-model='obj: #obj; mtl: #mtl' position="20 0 0" rotation="0 60 0" scale="10 10 10" bake-vertex-light bake-vertex-light n-mesh-collider="type: environment; convex: false"></a-entity>
 
-        <a-entity n-sound="src: assets/hell.wav; autoplay: true; loop: on; rolloff: logarithmic; minDistance: 2; maxDistance: 5; volume: 1" position='-16 .9 -1.1'></a-entity>
+        <a-entity n-sound="src: assets/hell.wav; autoplay: true; loop: on; rolloff: logarithmic; minDistance: 2; maxDistance: 5; volume: 1" position='16 -.9 1.1'><a-box color='red'></a-box></a-entity>
 
         <a-sky src='#sky' radius='500'></a-sky>
 
