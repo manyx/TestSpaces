@@ -9,19 +9,18 @@
   <body>
     <a-scene altspace="fullspace: true">
       <a-assets>
-        <a-asset-item id="firepit-obj" src="assets/model.obj"></a-asset-item>
-        <a-asset-item id="firepit-mtl" src="assets/materials.mtl"></a-asset-item>
+        <a-asset-item id="obj" src="assets/model.obj"></a-asset-item>
+        <a-asset-item id="mtl" src="assets/materials.mtl"></a-asset-item>
         <img id='sky' src='assets/sky.jpg'></img>-->
       </a-assets>
+      
         <a-light type="point" position="100 200 100" intensity="5000">
             <a-sphere radius='.2' color='yellow'></a-sphere>
         </a-light>
-        <a-entity obj-model='obj: #firepit-obj; mtl: #firepit-mtl' position="0 50 0" rotation="0 0 0" scale="20 20 20" bake-vertex-light bake-vertex-light n-mesh-collider="type: environment; convex: false"></a-entity>
 
-        <a-entity id="spawn" light="type: point; intensity: 2.0" position="45 24 10" rotation="0 270 0" material="color: yellow" geometry="primitive: box" id="spawn" visible="false"></a-entity>
-        <a-entity n-portal="targetEntity: #spawn"></a-entity>
+        <a-entity obj-model='obj: #obj; mtl: #mtl' position="-20 0 0" rotation="0 300 0" scale="10 10 10" bake-vertex-light bake-vertex-light n-mesh-collider="type: environment; convex: false"></a-entity>
 
-        <a-entity n-sound="src: assets/hell.wav; autoplay: true; loop: on; rolloff: logarithmic; minDistance: 2; maxDistance: 5; volume: 1"><a-box color='red'></a-box></a-entity>
+        <a-entity n-sound="src: assets/hell.wav; autoplay: true; loop: on; rolloff: logarithmic; minDistance: 2; maxDistance: 5; volume: 1" position='-16 .9 -1.1'></a-entity>
 
         <a-sky src='#sky' radius='500'></a-sky>
 
